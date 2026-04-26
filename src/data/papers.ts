@@ -1,0 +1,396 @@
+export interface Paper {
+  slug: string;
+  title: string;
+  authors: string;
+  year: number;
+  journal: string;
+  topic: string;
+  abstract: string;
+  keyFindings: string[];
+  doi: string;
+  featured?: boolean;
+}
+
+export const papers: Paper[] = [
+  // Trust in AI
+  {
+    slug: 'algorithm-aversion',
+    title: 'Algorithm Aversion: People Erroneously Avoid Algorithms After Seeing Them Err',
+    authors: 'Dietvorst, B. J., Simmons, J. P., & Massey, C.',
+    year: 2015,
+    journal: 'Journal of Experimental Psychology: General',
+    topic: 'trust',
+    abstract: 'A landmark study demonstrating that people are more likely to abandon algorithmic forecasters after witnessing them make errors, even when the algorithm consistently outperforms human forecasters. This asymmetry in error tolerance reveals a fundamental bias in how we evaluate human versus machine competence.',
+    keyFindings: [
+      'People lose confidence in algorithms more quickly than in human forecasters after seeing errors',
+      'This aversion persists even when the algorithm demonstrably outperforms humans',
+      'Giving people the ability to slightly modify the algorithm reduces aversion significantly',
+    ],
+    doi: '10.1037/xge0000033',
+    featured: true,
+  },
+  {
+    slug: 'accuracy-trust-ml',
+    title: 'Understanding the Effect of Accuracy on Trust in Machine Learning Models',
+    authors: 'Yin, M., Wortman Vaughan, J., & Wallach, H.',
+    year: 2019,
+    journal: 'CHI Conference on Human Factors in Computing Systems',
+    topic: 'trust',
+    abstract: 'This study investigates how stated and observed accuracy levels influence human trust in machine learning models. The findings reveal that trust is not a simple linear function of accuracy — people have complex mental models of what accuracy means and how it should affect their reliance on AI systems.',
+    keyFindings: [
+      'Stated accuracy significantly influences initial trust in ML models',
+      'Trust is resilient to observed inaccuracies when stated accuracy is high',
+      'There is a threshold effect where trust drops sharply below certain accuracy levels',
+    ],
+    doi: '10.1145/3290605.3300509',
+  },
+  {
+    slug: 'formalizing-trust-ai',
+    title: 'Formalizing Trust in Artificial Intelligence: Prerequisites, Causes and Goals of Human Trust in AI',
+    authors: 'Jacovi, A., Marasovic, A., Miller, T., & Goldberg, Y.',
+    year: 2021,
+    journal: 'FAccT Conference on Fairness, Accountability, and Transparency',
+    topic: 'trust',
+    abstract: 'A theoretical framework that formalizes the concept of trust in AI by analyzing its prerequisites, causes, and goals. The paper distinguishes between contractual trust (based on explicit agreements) and intrinsic trust (based on perceived benevolence), arguing that most discussions of AI trust conflate these distinct concepts.',
+    keyFindings: [
+      'Trust in AI can be decomposed into contractual and intrinsic components',
+      'Explainability serves trust by providing evidence for trustworthiness assessment',
+      'The framework reveals that many "trust-building" techniques actually target different trust types',
+    ],
+    doi: '10.1145/3442188.3445923',
+  },
+
+  // Anthropomorphism
+  {
+    slug: 'mind-in-machine',
+    title: 'The Mind in the Machine: Anthropomorphism Increases Trust in an Autonomous Vehicle',
+    authors: 'Waytz, A., Heafner, J., & Epley, N.',
+    year: 2014,
+    journal: 'Journal of Experimental Social Psychology',
+    topic: 'anthropomorphism',
+    abstract: 'Demonstrates that anthropomorphizing autonomous vehicles — giving them names, voices, and described intentions — increases trust and willingness to rely on them. This suggests that the same psychological mechanisms we use for human social cognition extend to our interactions with machines.',
+    keyFindings: [
+      'Anthropomorphized autonomous vehicles are trusted more than non-anthropomorphized ones',
+      'Anthropomorphism reduces blame attributed to the vehicle in accident scenarios',
+      'The effect is mediated by perceived mental capacity of the vehicle',
+    ],
+    doi: '10.1016/j.jesp.2014.01.003',
+    featured: true,
+  },
+  {
+    slug: 'machines-mindlessness',
+    title: 'Machines and Mindlessness: Social Responses to Computers',
+    authors: 'Nass, C., & Moon, Y.',
+    year: 2000,
+    journal: 'Journal of Social Issues',
+    topic: 'anthropomorphism',
+    abstract: 'A foundational paper demonstrating that humans apply social rules and expectations to computers, even when they know the machines are not human. People are polite to computers, apply gender stereotypes to them, and treat them as teammates — all without conscious awareness.',
+    keyFindings: [
+      'People apply social norms to computers automatically and unconsciously',
+      'Gender stereotypes are projected onto computers with male or female voices',
+      'These responses occur even among technically sophisticated users',
+    ],
+    doi: '10.1111/0022-4537.00153',
+  },
+  {
+    slug: 'three-factor-anthropomorphism',
+    title: 'On Seeing Human: A Three-Factor Theory of Anthropomorphism',
+    authors: 'Epley, N., Waytz, A., & Cacioppo, J. T.',
+    year: 2007,
+    journal: 'Psychological Review',
+    topic: 'anthropomorphism',
+    abstract: 'Proposes a comprehensive theory explaining when and why people anthropomorphize. Three factors drive the tendency: elicited agent knowledge (using human schemas as defaults), effectance motivation (desire to understand and predict), and sociality motivation (need for social connection).',
+    keyFindings: [
+      'Loneliness increases anthropomorphism of non-human agents',
+      'Unpredictability of an agent increases anthropomorphic attribution',
+      'Individual differences in anthropomorphism are stable and measurable',
+    ],
+    doi: '10.1037/0033-295X.114.4.864',
+  },
+
+  // AI Anxiety
+  {
+    slug: 'reducing-human-percentage',
+    title: '"It\'s Reducing a Human Being to a Percentage": Perceptions of Justice in Algorithmic Decisions',
+    authors: 'Binns, R., Van Kleek, M., Veale, M., Lyngs, U., Zhao, J., & Shadbolt, N.',
+    year: 2018,
+    journal: 'CHI Conference on Human Factors in Computing Systems',
+    topic: 'anxiety',
+    abstract: 'Examines how people perceive fairness when algorithms make consequential decisions about them. Participants expressed deep discomfort with being "reduced to a number," revealing psychological tensions between efficiency and dignity in algorithmic governance.',
+    keyFindings: [
+      'People feel dehumanized when reduced to statistical predictions',
+      'Different explanation styles (input, demographic, case-based) affect justice perceptions differently',
+      'Concerns about algorithmic decisions are rooted in identity and autonomy, not just accuracy',
+    ],
+    doi: '10.1145/3173574.3173951',
+    featured: true,
+  },
+  {
+    slug: 'fear-autonomous-robots',
+    title: 'Fear of Autonomous Robots and Artificial Intelligence: Evidence from National Representative Data with Probability Sampling',
+    authors: 'Liang, Y., & Lee, S. A.',
+    year: 2017,
+    journal: 'International Journal of Social Robotics',
+    topic: 'anxiety',
+    abstract: 'Using nationally representative survey data, this study maps the prevalence and predictors of fear toward autonomous robots and AI. The findings reveal that AI anxiety is widespread but unevenly distributed across demographic and psychological profiles.',
+    keyFindings: [
+      'Over 70% of respondents expressed some degree of discomfort with autonomous AI',
+      'Prior exposure to robots reduced fear, while science fiction exposure increased it',
+      'Personality traits (especially openness and neuroticism) predict AI anxiety levels',
+    ],
+    doi: '10.1007/s12369-017-0401-3',
+  },
+  {
+    slug: 'ai-anxiety-concept',
+    title: 'AI Anxiety',
+    authors: 'Johnson, D. G., & Verdicchio, M.',
+    year: 2017,
+    journal: 'Journal of the Association for Information Science and Technology',
+    topic: 'anxiety',
+    abstract: 'A conceptual analysis of AI anxiety as a societal phenomenon. The authors argue that much of the fear surrounding AI is based on misunderstandings of how AI works, inflated by media narratives, and shaped by deep psychological tendencies to anthropomorphize intelligence.',
+    keyFindings: [
+      'AI anxiety stems partly from conflating narrow and general intelligence',
+      'Media narratives disproportionately amplify worst-case AI scenarios',
+      'Public understanding of AI capabilities is systematically miscalibrated',
+    ],
+    doi: '10.1002/asi.23867',
+  },
+
+  // Decision Making
+  {
+    slug: 'algorithm-appreciation',
+    title: 'Algorithm Appreciation: People Prefer Algorithmic to Human Judgment',
+    authors: 'Logg, J. M., Minson, J. A., & Moore, D. A.',
+    year: 2019,
+    journal: 'Organizational Behavior and Human Decision Processes',
+    topic: 'decision-making',
+    abstract: 'Challenging the algorithm aversion narrative, this study shows that in many contexts people actually prefer algorithmic advice over human judgment. The preference reverses only when the task is perceived as subjective or uniquely human.',
+    keyFindings: [
+      'People show "algorithm appreciation" for objective, quantifiable tasks',
+      'Algorithm aversion emerges mainly for subjective and moral judgments',
+      'Expertise of the human alternative moderates the preference',
+    ],
+    doi: '10.1016/j.obhdp.2018.12.005',
+  },
+  {
+    slug: 'algorithm-in-the-loop',
+    title: 'The Principles and Limits of Algorithm-in-the-Loop Decision Making',
+    authors: 'Green, B., & Chen, Y.',
+    year: 2019,
+    journal: 'Proceedings of the ACM on Human-Computer Interaction (CSCW)',
+    topic: 'decision-making',
+    abstract: 'Investigates what happens when humans use AI as a tool rather than a replacement. The study finds that algorithm-in-the-loop decision making does not automatically improve outcomes — humans often defer to the algorithm even when they should override it.',
+    keyFindings: [
+      'Human oversight of AI decisions does not reliably improve accuracy',
+      'People anchor heavily on algorithmic recommendations even when incorrect',
+      'The "human in the loop" paradigm may provide false assurance of human control',
+    ],
+    doi: '10.1145/3359152',
+    featured: true,
+  },
+  {
+    slug: 'making-sense-recommendations',
+    title: 'Making Sense of Recommendations',
+    authors: 'Yeomans, M., Shah, A., Mullainathan, S., & Kleinberg, J.',
+    year: 2019,
+    journal: 'Journal of Behavioral Decision Making',
+    topic: 'decision-making',
+    abstract: 'Studies how people interpret and use algorithmic recommendations for interpersonal predictions. The research shows that algorithms outperform human intuition at predicting others\' preferences, yet people systematically prefer their own judgment.',
+    keyFindings: [
+      'Algorithms outperform human intuition in predicting others\' preferences',
+      'People overweight their own social judgment relative to algorithmic predictions',
+      'The gap between algorithm and human performance widens for less familiar others',
+    ],
+    doi: '10.1002/bdm.2118',
+  },
+
+  // Creativity
+  {
+    slug: 'art-in-artificial',
+    title: 'Putting the Art in Artificial: Aesthetic Responses to Computer-Generated Art',
+    authors: 'Chamberlain, R., Mullin, C., Scheerlinck, B., & Wagemans, J.',
+    year: 2018,
+    journal: 'Psychology of Aesthetics, Creativity, and the Arts',
+    topic: 'creativity',
+    abstract: 'A systematic study of how people perceive and evaluate art created by computers compared to art created by humans. The findings reveal that authorship information significantly modulates aesthetic appreciation, even when the visual content is identical.',
+    keyFindings: [
+      'Art labeled as "computer-generated" is rated lower on creativity and meaning',
+      'When authorship is unknown, people cannot reliably distinguish human from AI art',
+      'The "authorship effect" is stronger for abstract than representational art',
+    ],
+    doi: '10.1037/aca0000136',
+  },
+  {
+    slug: 'ai-artists-art',
+    title: 'Artificial Intelligence, Artists, and Art: Attitudes Toward Artwork Produced by Humans vs. Artificial Intelligence',
+    authors: 'Hong, J. W., & Curran, N. M.',
+    year: 2019,
+    journal: 'ACM Transactions on Multimedia Computing, Communications, and Applications',
+    topic: 'creativity',
+    abstract: 'Examines how disclosure of AI involvement in art creation affects perceived value, creativity, and emotional depth. The study reveals a robust "human premium" in art evaluation that persists even when objective quality differences are absent.',
+    keyFindings: [
+      'Human-made art is perceived as more creative, intentional, and emotionally deep',
+      'The evaluation gap narrows when participants are art-literate',
+      'AI art is evaluated more favorably when framed as a human-AI collaboration',
+    ],
+    doi: '10.1145/3326337',
+    featured: true,
+  },
+  {
+    slug: 'computational-creativity-frontier',
+    title: 'Computational Creativity: The Final Frontier?',
+    authors: 'Colton, S., & Wiggins, G. A.',
+    year: 2012,
+    journal: 'European Conference on Artificial Intelligence (ECAI)',
+    topic: 'creativity',
+    abstract: 'A position paper arguing that computational creativity represents the ultimate challenge for AI — and that public perception of creative AI is shaped more by psychological biases about the nature of creativity than by the actual capabilities of the systems.',
+    keyFindings: [
+      'People apply different creativity standards to machines versus humans',
+      'The "intentionality gap" is the primary barrier to accepting AI as creative',
+      'Framing effects strongly influence whether AI outputs are seen as creative',
+    ],
+    doi: '10.3233/978-1-61499-098-7-21',
+  },
+
+  // Human-AI Collaboration
+  {
+    slug: 'complementary-team-performance',
+    title: 'Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance',
+    authors: 'Bansal, G., Wu, T., Zhou, J., Fok, R., Nushi, B., Kamar, E., Ribeiro, M. T., & Weld, D.',
+    year: 2021,
+    journal: 'CHI Conference on Human Factors in Computing Systems',
+    topic: 'collaboration',
+    abstract: 'Tests whether AI explanations help human-AI teams exceed the performance of either alone. Surprisingly, explanations that increase understanding do not always improve team performance — and can even hurt it by inducing over-reliance.',
+    keyFindings: [
+      'AI explanations improve human understanding but not necessarily team performance',
+      'Explanations can induce over-reliance when the AI is wrong',
+      'Complementary performance requires humans to know when to override the AI',
+    ],
+    doi: '10.1145/3411764.3445717',
+  },
+  {
+    slug: 'human-predictions-explanations',
+    title: 'On Human Predictions with Explanations and Predictions of Machine Learning Models',
+    authors: 'Lai, V., & Tan, C.',
+    year: 2019,
+    journal: 'FAccT Conference on Fairness, Accountability, and Transparency',
+    topic: 'collaboration',
+    abstract: 'Examines how different types of AI explanations affect human prediction accuracy. The study finds that not all explanations are created equal — some improve human performance while others introduce new biases.',
+    keyFindings: [
+      'Example-based explanations outperform feature-based explanations for human decision-making',
+      'AI explanations can introduce anchoring bias in human predictions',
+      'The effectiveness of explanations depends on the user\'s domain expertise',
+    ],
+    doi: '10.1145/3287560.3287590',
+  },
+  {
+    slug: 'human-ai-decision-making-review',
+    title: 'Knowing About Knowing: An Illusion of Human Competence Can Hinder Appropriate Reliance on AI Systems',
+    authors: 'Gaube, S., Suresh, H., Raber, M., Merz, E. M., Ghassemi, M., & Gurkan, H.',
+    year: 2023,
+    journal: 'CHI Conference on Human Factors in Computing Systems',
+    topic: 'collaboration',
+    abstract: 'Reveals that domain experts may be worse at collaborating with AI than novices, because their confidence in their own knowledge leads them to dismiss correct AI recommendations. The "illusion of competence" paradoxically makes experts less effective in human-AI teams.',
+    keyFindings: [
+      'Domain experts override correct AI recommendations more often than novices',
+      'Confidence in human expertise can reduce human-AI team performance',
+      'Calibrated self-assessment is key to effective human-AI collaboration',
+    ],
+    doi: '10.1145/3544548.3581025',
+    featured: true,
+  },
+
+  // Ethics & Fairness
+  {
+    slug: 'fairness-perceptions',
+    title: 'Fairness Perceptions of Algorithmic Decision-Making: A Systematic Review of the Empirical Literature',
+    authors: 'Starke, C., Baleis, J., Keller, B., & Marcinkowski, F.',
+    year: 2022,
+    journal: 'Big Data & Society',
+    topic: 'ethics',
+    abstract: 'A comprehensive review of how people perceive fairness in algorithmic decisions across different domains. The review reveals that fairness perceptions are highly context-dependent and often diverge from technical definitions of algorithmic fairness.',
+    keyFindings: [
+      'People use different fairness criteria depending on the decision domain',
+      'Technical fairness metrics often conflict with lay perceptions of fairness',
+      'Transparency about algorithmic processes does not always increase fairness perceptions',
+    ],
+    doi: '10.1177/20539517221115189',
+  },
+  {
+    slug: 'perception-algorithmic-decisions',
+    title: 'Understanding Perception of Algorithmic Decisions: Fairness, Trust, and Emotion in Response to Algorithmic Management',
+    authors: 'Lee, M. K.',
+    year: 2018,
+    journal: 'Big Data & Society',
+    topic: 'ethics',
+    abstract: 'Studies how workers perceive algorithmic management compared to human management. Workers view algorithms as more fair for mechanical tasks but less fair for tasks requiring human judgment, revealing domain-specific trust boundaries.',
+    keyFindings: [
+      'Algorithms are perceived as fairer for routine, quantifiable decisions',
+      'Human managers are preferred for nuanced, subjective evaluations',
+      'Emotional responses to algorithmic decisions are moderated by perceived task type',
+    ],
+    doi: '10.1177/2053951718756684',
+  },
+  {
+    slug: 'moral-machine',
+    title: 'The Moral Machine Experiment',
+    authors: 'Awad, E., Dsouza, S., Kim, R., Schulz, J., Henrich, J., Shariff, A., Bonnefon, J. F., & Rahwan, I.',
+    year: 2018,
+    journal: 'Nature',
+    topic: 'ethics',
+    abstract: 'The largest study of moral preferences in AI decision-making, gathering 40 million decisions from people in 233 countries on how autonomous vehicles should resolve ethical dilemmas. Reveals systematic cultural variation in moral reasoning about AI.',
+    keyFindings: [
+      'Moral preferences for AI vary systematically across cultures and regions',
+      'Three major cultural clusters emerge with distinct moral priorities',
+      'People consistently prefer saving more lives but disagree on whose lives to prioritize',
+    ],
+    doi: '10.1038/s41586-018-0637-6',
+  },
+
+  // Emotional AI
+  {
+    slug: 'alone-together',
+    title: 'Alone Together: Why We Expect More from Technology and Less from Each Other',
+    authors: 'Turkle, S.',
+    year: 2011,
+    journal: 'Basic Books',
+    topic: 'emotional-ai',
+    abstract: 'Sherry Turkle\'s landmark work documenting how digital companions and social robots reshape human expectations of intimacy and connection. Through extensive interviews and observations, she reveals a growing willingness to accept simulated relationships.',
+    keyFindings: [
+      'Children readily form attachments to social robots and attribute emotions to them',
+      'Adults increasingly prefer mediated communication over face-to-face interaction',
+      'The comfort of AI companionship comes at the cost of tolerance for human complexity',
+    ],
+    doi: '10.1080/03634523.2011.609381',
+  },
+  {
+    slug: 'affective-computing',
+    title: 'Affective Computing',
+    authors: 'Picard, R. W.',
+    year: 1997,
+    journal: 'MIT Press',
+    topic: 'emotional-ai',
+    abstract: 'The foundational text that launched the field of affective computing, arguing that emotions are not opposed to rational thought but essential to it — and that for AI to be truly intelligent, it must be able to recognize, express, and have emotions.',
+    keyFindings: [
+      'Emotion recognition is essential for natural human-computer interaction',
+      'Emotional intelligence in machines could improve decision-making, health, and learning',
+      'Ethical boundaries around machine emotion detection must be established proactively',
+    ],
+    doi: '10.7551/mitpress/1140.001.0001',
+  },
+  {
+    slug: 'uncanny-valley-chatbots',
+    title: 'The Uncanny Valley of Mind: An Empirical Investigation of the Uncanny Valley of Mind Hypothesis',
+    authors: 'Stein, J. P., & Ohler, P.',
+    year: 2017,
+    journal: 'Human Communication Research',
+    topic: 'emotional-ai',
+    abstract: 'Tests whether there is a psychological "uncanny valley" for AI minds — a point where machines that seem almost-but-not-quite human in their mental abilities provoke discomfort. The study finds evidence for a cognitive uncanny valley that parallels the physical one.',
+    keyFindings: [
+      'AI agents perceived as "almost human" in cognition provoke greater discomfort than clearly nonhuman or clearly human agents',
+      'The uncanny valley extends beyond physical appearance to mental capabilities',
+      'Individual differences in need for human uniqueness moderate the effect',
+    ],
+    doi: '10.1093/hcr/hqx001',
+  },
+];

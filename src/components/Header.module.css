@@ -1,0 +1,133 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.logoIcon {
+  font-size: 1.5rem;
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
+.logoText {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.logoDot {
+  color: var(--accent-primary);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.link:hover {
+  color: var(--text-primary);
+}
+
+.ctaLink {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--bg-primary);
+  background: var(--accent-primary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.ctaLink:hover {
+  background: #6366f1;
+  color: var(--bg-primary);
+  transform: translateY(-1px);
+}
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.barOpen:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.barOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.barOpen:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .menuToggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .navOpen {
+    display: flex;
+  }
+}
