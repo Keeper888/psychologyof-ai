@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Psychology of AI — Research Hub',
   description: 'Exploring how artificial intelligence reshapes human cognition, emotion, trust, and behavior. Curated research at the intersection of psychology and AI.',
   keywords: ['psychology', 'artificial intelligence', 'AI', 'trust', 'anthropomorphism', 'human-AI interaction', 'research'],
+  icons: { icon: '/favicon.svg' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

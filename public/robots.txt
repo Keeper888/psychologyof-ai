@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://psychologyof.ai/sitemap.xml
